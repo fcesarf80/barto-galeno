@@ -5,7 +5,7 @@ import com.fcesar.bartogaleno.model.Behavior
 
 class QuestionEvaluator {
 
-    fun avaliar(respostas: List<Int>): Behavior {
+    fun avaliar(respostas: List<Int>): Behavior? {
 
         val perguntas = QuestionRepository.questions
 
@@ -24,7 +24,10 @@ class QuestionEvaluator {
             }
         }
 
+        if (pontuacao.isEmpty()) {
+            return null
+        }
+
         return pontuacao.maxByOrNull { it.value }?.key
-            ?: Behavior.COMUNICACAO
     }
 }

@@ -9,6 +9,15 @@
         android:padding="24dp">
 
     <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="RESULTADO"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/txtResultado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +25,6 @@
         android:text="Resultado"
         android:textAlignment="center"
         android:textSize="20sp" />
-
     <Button
         android:id="@+id/btnRefazer"
         android:layout_width="match_parent"
@@ -40,5 +48,6 @@
         android:text="CINEL Porto\n\nCurso:\nTécnico Especialista em Tecnologias e Programação de Sistemas de Informação\nCET-481RA015-.TPSI.D.P.32 QNQ N5\n\nUC00609 – Desenvolver aplicações móveis (plataforma Android)\n\nFormador:\nCristiano Rocha Ferreira\n\nFormando:\nFernando Cesar Ferreira Farias (Cesar) – nº 40953\n\n2026"
         android:textColor="#666666"
         android:textSize="12sp" />
+
 
 </LinearLayout>

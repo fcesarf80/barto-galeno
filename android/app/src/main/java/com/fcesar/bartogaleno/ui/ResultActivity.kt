@@ -20,16 +20,10 @@ class ResultActivity : AppCompatActivity() {
             intent.getIntegerArrayListExtra("RESPOSTAS") ?: arrayListOf()
 
         val txtResultado = findViewById<TextView>(R.id.txtResultado)
+        val txtTitulo = findViewById<TextView>(R.id.txtTitulo)
         val btnFinalizar = findViewById<Button>(R.id.btnFinalizar)
 
         val evaluator = QuestionEvaluator()
-        val comportamento = evaluator.avaliar(respostas)
-
-        txtResultado.text = MessageRepository.getMessage(comportamento)
-
-        btnFinalizar.setOnClickListener {
-            finishAffinity()
-        }
 
         val btnRefazer = findViewById<Button>(R.id.btnRefazer)
 
@@ -39,7 +33,27 @@ class ResultActivity : AppCompatActivity() {
                     Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
-    }
+        val comportamento = evaluator.avaliar(respostas)
 
+        if (comportamento == null) {
+
+            txtTitulo.text = "Momento para refletir"
+
+            txtResultado.text =
+                "Suas respostas priorizaram uma postura mais individualista para as situações apresentadas.\n\n" +
+                        "Convidamos você a olhar para os cenários do dia a dia sob a ótica da parceria e da construção coletiva.\n\n" +
+                        "Grandes ideias e ótimos ambientes de trabalho nascem quando compartilhamos responsabilidades e celebramos juntos!\n\n" +
+                        "Este questionário tem finalidade educativa e busca incentivar a reflexão sobre comportamentos no ambiente de trabalho."
+
+        } else {
+
+            txtResultado.text = MessageRepository.getMessage(comportamento)
+
+        }
+
+        btnFinalizar.setOnClickListener {
+            finishAffinity()
+        }
+    }
 
 }
