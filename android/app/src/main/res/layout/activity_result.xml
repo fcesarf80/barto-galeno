@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
-
-    <TextView
-        android:id="@+id/txtTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resultado"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp"/>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
 
     <TextView
         android:id="@+id/txtResultado"
@@ -26,10 +18,27 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btnFinalizar"
+        android:id="@+id/btnRefazer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:text="Refazer Questionário" />
+
+    <Button
+        android:id="@+id/btnFinalizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="Finalizar" />
+
+    <TextView
+        android:id="@+id/txtCreditos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="CINEL Porto\n\nCurso:\nTécnico Especialista em Tecnologias e Programação de Sistemas de Informação\nCET-481RA015-.TPSI.D.P.32 QNQ N5\n\nUC00609 – Desenvolver aplicações móveis (plataforma Android)\n\nFormador:\nCristiano Rocha Ferreira\n\nFormando:\nFernando Cesar Ferreira Farias (Cesar) – nº 40953\n\n2026"
+        android:textColor="#666666"
+        android:textSize="12sp" />
 
 </LinearLayout>

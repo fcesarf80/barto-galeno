@@ -1,5 +1,6 @@
 package com.fcesar.bartogaleno.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -29,6 +30,16 @@ class ResultActivity : AppCompatActivity() {
         btnFinalizar.setOnClickListener {
             finishAffinity()
         }
+
+        val btnRefazer = findViewById<Button>(R.id.btnRefazer)
+
+        btnRefazer.setOnClickListener {
+            val intent = Intent(this, StartActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
     }
+
 
 }
