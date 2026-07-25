@@ -1,68 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtProgresso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Situação 1 de 6"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
-
-    <TextView
-        android:id="@+id/txtPergunta"
+    <!-- Background -->
+    <ImageView
+        android:id="@+id/imgBackground"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/cenario_02"
+        android:scaleType="centerCrop"
+        android:alpha="0.90"
+        android:contentDescription="@null" />
+
+    <!-- Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_overlay" />
+
+    <!-- Conteúdo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Como você costuma tomar decisões?"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        android:textStyle="bold"/>
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp">
-
-        <RadioButton
-            android:id="@+id/rb1"
+        <TextView
+            android:id="@+id/txtProgresso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pela razão"/>
+            android:layout_marginBottom="16dp"
+            android:text="Situação 1 de 6"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/rb2"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/txtPergunta"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pela emoção"/>
+            android:gravity="center"
+            android:text="Como você costuma tomar decisões?"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/rb3"
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Depende da situação"/>
+            android:layout_marginTop="32dp"
+            android:background="@drawable/card_glass"
+            android:padding="16dp">
 
-        <RadioButton
-            android:id="@+id/rb4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alternativa D" />
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pela razão"
+                android:textColor="#FFFFFF" />
 
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pela emoção"
+                android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/btnProxima"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="PRÓXIMA"/>
+            <RadioButton
+                android:id="@+id/rb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Depende da situação"
+                android:textColor="#FFFFFF" />
 
-</LinearLayout>
+            <RadioButton
+                android:id="@+id/rb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alternativa D"
+                android:textColor="#FFFFFF" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnProxima"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_primary"
+            android:text="PRÓXIMA"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</FrameLayout>
