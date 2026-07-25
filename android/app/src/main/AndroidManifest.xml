@@ -12,7 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BartoGaleno">
         <activity
-            android:name=".util.activities.MainActivity"
+            android:name=".ui.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.QuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
