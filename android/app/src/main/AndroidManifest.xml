@@ -21,6 +21,9 @@
             android:name=".ui.StartActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.TransitionActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

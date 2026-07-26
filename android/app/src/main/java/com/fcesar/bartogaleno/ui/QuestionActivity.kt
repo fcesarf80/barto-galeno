@@ -67,7 +67,7 @@ class QuestionActivity : AppCompatActivity() {
                 mostrarPergunta()
             } else {
 
-                val intent = Intent(this, ResultActivity::class.java)
+                val intent = Intent(this, TransitionActivity::class.java)
 
                 intent.putIntegerArrayListExtra(
                     "RESPOSTAS",
@@ -78,8 +78,7 @@ class QuestionActivity : AppCompatActivity() {
 
                 finish()
             }
-        }
-    }
+        }    }
 
     private fun mostrarPergunta() {
 

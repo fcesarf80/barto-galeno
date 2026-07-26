@@ -3,43 +3,18 @@ package com.fcesar.bartogaleno.ui
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import com.fcesar.bartogaleno.util.TypeWriter
 import androidx.appcompat.app.AppCompatActivity
 import com.fcesar.bartogaleno.R
 import com.fcesar.bartogaleno.animation.BartoAnimator
 
 class StartActivity : AppCompatActivity() {
 
-    private val handler = Handler(Looper.getMainLooper())
-
-    private fun escreverTexto(
-        textView: TextView,
-        mensagem: String,
-        velocidade: Long = 40,
-        aoTerminar: (() -> Unit)? = null
-    ) {
-
-        textView.text = ""
-
-        mensagem.forEachIndexed { index, _ ->
-
-            handler.postDelayed({
-
-                textView.text = mensagem.substring(0, index + 1)
-
-                if (index == mensagem.lastIndex) {
-                    aoTerminar?.invoke()
-                }
-
-            }, velocidade * index)
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,7 +41,7 @@ class StartActivity : AppCompatActivity() {
 
             animator.iniciar()
 
-            escreverTexto(
+            TypeWriter.escrever(
                 txtFalaBarto,
                 """
                 Bem-vindo, $nome!
