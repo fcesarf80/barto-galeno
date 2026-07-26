@@ -12,12 +12,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.fcesar.bartogaleno.R
+import com.fcesar.bartogaleno.animation.BartoAnimator
 
 class StartActivity : AppCompatActivity() {
 
     private val handler = Handler(Looper.getMainLooper())
 
-    private var animacaoAtiva = false
     private fun escreverTexto(
         textView: TextView,
         mensagem: String,
@@ -41,40 +41,6 @@ class StartActivity : AppCompatActivity() {
         }
     }
 
-    private fun animarFala(
-        imageView: ImageView
-    ) {
-
-        animacaoAtiva = true
-
-        imageView.setImageResource(R.drawable.galo_fala_01)
-
-        val runnable = object : Runnable {
-
-            private var bocaAberta = false
-
-            override fun run() {
-
-                imageView.setImageResource(
-                    if (bocaAberta)
-                        R.drawable.galo_fala_01
-                    else
-                        R.drawable.galo_fala_02
-                )
-
-                bocaAberta = !bocaAberta
-
-                if (animacaoAtiva) {
-                    handler.postDelayed(this, 180)
-                } else {
-                    imageView.setImageResource(R.drawable.galo_espera)
-                }
-            }
-        }
-
-        handler.post(runnable)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
@@ -83,6 +49,8 @@ class StartActivity : AppCompatActivity() {
         val btnIniciar = findViewById<Button>(R.id.btnIniciar)
         val txtFalaBarto = findViewById<TextView>(R.id.txtFalaBarto)
         val imgBarto = findViewById<ImageView>(R.id.imgBarto)
+
+        val animator = BartoAnimator(imgBarto)
 
         btnIniciar.setOnClickListener {
 
@@ -96,26 +64,26 @@ class StartActivity : AppCompatActivity() {
 
             txtFalaBarto.visibility = View.VISIBLE
 
+            animator.iniciar()
+
             escreverTexto(
                 txtFalaBarto,
                 """
                 Bem-vindo, $nome!
-            
+
                 Eu sou o Bartô Galeno.
-            
+
                 Vou acompanhá-lo durante esta reflexão.
-            
+
                 Vamos começar!
                 """.trimIndent()
             ) {
-                animacaoAtiva = false
+                animator.parar()
             }
 
             val mediaPlayer = MediaPlayer.create(this, R.raw.intro_barto)
 
             mediaPlayer.start()
-
-            animarFala(imgBarto)
 
             mediaPlayer.setOnCompletionListener {
 

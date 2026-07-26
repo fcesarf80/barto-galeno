@@ -4,6 +4,7 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.ImageView
 import com.fcesar.bartogaleno.R
+import com.fcesar.bartogaleno.animation.BartoAnimator
 
 class BartoAnimator(
     private val imageView: ImageView
