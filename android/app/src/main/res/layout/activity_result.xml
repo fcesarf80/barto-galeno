@@ -20,11 +20,16 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_overlay"/>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
     <!-- Conteúdo -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:gravity="top|center_horizontal"
         android:orientation="vertical"
         android:padding="24dp">
 
@@ -43,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/card_glass"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:padding="20dp"
             android:text="Resultado"
             android:textAlignment="center"
@@ -54,7 +59,7 @@
             android:id="@+id/btnRefazer"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/button_primary"
             android:text="Refazer Questionário"
             android:textAllCaps="false"
@@ -78,12 +83,14 @@
             android:id="@+id/txtCreditos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="CINEL Porto\n\nCurso:\nTécnico Especialista em Tecnologias e Programação de Sistemas de Informação\nCET-481RA015-.TPSI.D.P.32 QNQ N5\n\nUC00609 – Desenvolver aplicações móveis (plataforma Android)\n\nFormador:\nCristiano Rocha Ferreira\n\nFormando:\nFernando Cesar Ferreira Farias (Cesar) – nº 40953\n\n2026"
             android:textColor="#DDDDDD"
             android:textSize="12sp"/>
 
     </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>
