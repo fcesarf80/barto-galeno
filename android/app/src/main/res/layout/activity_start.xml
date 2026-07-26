@@ -46,6 +46,19 @@
             android:src="@drawable/galo_espera" />
 
         <TextView
+            android:id="@+id/txtFalaBarto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/card_glass"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Bem-vindo!"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/txtSubtitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
